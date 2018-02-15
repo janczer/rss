@@ -1,0 +1,33 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Getting Started: Serving Web Content</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+  <body>
+    <!--<table>-->
+      <!--<tr th:each="var : ${#vars}">-->
+        <!--<td th:text="${var.key}"></td>-->
+        <!--<td th:text="${var.value}"></td>-->
+      <!--</tr>-->
+    <!--</table>-->
+  <table>
+    <tr th:each="c : ${channels}">
+      <td th:text="${c.id}"></td>
+      <td th:text="${c.title}"></td>
+      <td th:text="${c.link}"></td>
+    </tr>
+  </table>
+
+  <div th:each="c : ${channels}">
+    <div th:text="${c.title}"></div>
+    <table>
+      <tr th:each="p : ${c.posts}">
+        <td th:text="${p.id}"></td>
+        <td th:text="${p.title}"></td>
+        <td th:text="${p.link}"></td>
+      </tr>
+    </table>
+  </div>
+  </body>
+</html>
